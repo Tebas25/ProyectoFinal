@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Login"
+             Title="Login"
+             Shell.NavBarIsVisible="False">
+
+    <Grid BackgroundColor="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <!--<Path Stroke="#000" Data="M193.85017,-44.48627 L664.81876,-44.48627 C612.79701,-44.48627 570.62495,45.05679 570.62495,155.51484 C570.62495,265.97288 612.79701,355.51484 664.81876,355.51484 L193.85017,355.51484 C141.82842,355.51484 94.80137,275.97288 94.80137,165.51484 C94.80137,55.05679 137.79607,-44.48627 193.85017,-44.48627 Z" Fill="#a9f9b7">
+            <Path.RenderTransform>
+                <RotateTransform Angle="90" CenterX="404.805" CenterY=" 155.514"/>
+            </Path.RenderTransform>
+        </Path>-->
+
+        <StackLayout>
+            <Frame BackgroundColor="SkyBlue" HeightRequest="60" WidthRequest="60" CornerRadius="30" Padding="0" Margin="0,10,0,0" HorizontalOptions="Center">
+                <Image Source="power_gym.png" Aspect="AspectFill" Margin="0" />
+            </Frame>
+        </StackLayout>
+
+        <Grid RowSpacing="5" Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="1" Text="Bienvenido!" HorizontalOptions="Center" FontSize="Title" TextColor="Black" FontAttributes="Bold" Padding="0"/>
+            <Label Grid.Row="2" Text="Inicie Sesión para continuar" HorizontalOptions="Center" FontSize="Subtitle" TextColor="Black"/>
+
+            <StackLayout Grid.Row="3" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="username.png" Aspect="AspectFill" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Username}" Placeholder="Usuario" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+                <Frame BackgroundColor="Transparent" BorderColor="LightGreen" Margin="0,15,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                    <StackLayout Orientation="Horizontal">
+                        <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                            <Image Source="password.png" Aspect="AspectFit" Margin="0"/>
+                        </Frame>
+                        <Entry Text="{Binding Clave}" Placeholder="Contraseña" TextColor="Black" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                    </StackLayout>
+                </Frame>
+
+                <Button Text="Iniciar Sesion" Background="LightGreen" TextColor="Black" FontAttributes="Bold" CornerRadius="30" WidthRequest="200" Margin="0,15,0,0" Command="{Binding LoginCommand}"/>
+
+            </StackLayout>
+        </Grid>
+        
+    </Grid>
+</ContentPage>

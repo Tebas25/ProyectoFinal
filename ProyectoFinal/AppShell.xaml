@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ProyectoFinal.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ProyectoFinal"
+    xmlns:views="clr-namespace:ProyectoFinal.Views"
+    xmlns:models="clr-namespace:ProyectoFinal.Models"
+    xmlns:usercontrol ="clr-namespace:ProyectoFinal.UserControl" 
+    Shell.TabBarIsVisible="False"
+    Title="ProyectoFinal">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:Login}"
+        FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="Login" />
+    
+    
+    <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Página Principal"  ContentTemplate="{DataTemplate views:HomePage}"/>
+        <ShellContent Title="Sobre Nosotros"  ContentTemplate="{DataTemplate views:AboutPage}"/>
+    </FlyoutItem>
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label x:Name="lblUserName" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+            <Label x:Name="lblEmail" FontSize="16" TextColor="Black"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <StackLayout Padding="20">
+            <Button Text="Salir" Command="{Binding SignOutCommand}" Background="Red" TextColor="White"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+
+</Shell>
