@@ -8,9 +8,6 @@
         <StackLayout Padding="20" Spacing="10">
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
             <CollectionView ItemsSource="{Binding Usuarios}">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="5"/>
-                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Margin="5" Padding="10" BackgroundColor="{StaticResource Secondary}" CornerRadius="10">
@@ -20,8 +17,8 @@
                                 <Label Text="{Binding Nombre}" FontSize="Medium" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" />
                                 <Label Text="Correo:" FontSize="Small" Grid.Row="1" Grid.Column="0" />
                                 <Label Text="{Binding Correo}" FontSize="Micro" Grid.Row="1" Grid.Column="1" />
-                                <Label Text="Rol:" FontSize="Small" FontAttributes="Italic" Grid.Row="2" Grid.Column="0" />
-                                <Label Text="{Binding Rol}" FontSize="14" FontAttributes="Italic" Grid.Row="2" Grid.Column="1" />
+                                <Label Text="Membresia:" FontSize="Small" FontAttributes="Italic" Grid.Row="2" Grid.Column="0" />
+                                <Label Text="{Binding Membresia}" FontSize="14" FontAttributes="Italic" Grid.Row="2" Grid.Column="1" />
 
                             </Grid>
                         </Frame>
