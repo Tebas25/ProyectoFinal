@@ -8,6 +8,9 @@
         <StackLayout Padding="20" Spacing="10">
             <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
             <CollectionView ItemsSource="{Binding Usuarios}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame Margin="5" Padding="10" BackgroundColor="{StaticResource Secondary}" CornerRadius="10">
