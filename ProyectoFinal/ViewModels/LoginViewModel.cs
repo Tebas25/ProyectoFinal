@@ -3,9 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 using Newtonsoft.Json;
 using ProyectoFinal.Models;
 using ProyectoFinal.Services;
-using ProyectoFinal.UserControl;
 using ProyectoFinal.Views;
-using System.Text.Json.Serialization;
 
 namespace ProyectoFinal.ViewModels
 {
@@ -33,7 +31,6 @@ namespace ProyectoFinal.ViewModels
                     string userDetails = JsonConvert.SerializeObject(usuario);
                     Preferences.Set(nameof(App.usuario), userDetails);
                     App.usuario = usuario;
-                    AppShell.Current.FlyoutHeader = new FlyoutHeaderControl();
                     await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
                 }
                 else

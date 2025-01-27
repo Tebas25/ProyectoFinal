@@ -16,6 +16,7 @@ namespace ProyectoFinal.ViewModels
             {
                 Preferences.Remove(nameof(App.usuario));
             }
+            App.usuario = null;
             await Shell.Current.GoToAsync($"//{nameof(Login)}");
         }
     }

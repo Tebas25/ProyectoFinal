@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:ProyectoFinal"
     xmlns:views="clr-namespace:ProyectoFinal.Views"
     xmlns:models="clr-namespace:ProyectoFinal.Models"
-    xmlns:usercontrol ="clr-namespace:ProyectoFinal.UserControl" 
     Shell.TabBarIsVisible="False"
     Title="ProyectoFinal">
 
@@ -22,13 +21,6 @@
         <ShellContent Title="Página Principal"  ContentTemplate="{DataTemplate views:HomePage}"/>
         <ShellContent Title="Sobre Nosotros"  ContentTemplate="{DataTemplate views:AboutPage}"/>
     </FlyoutItem>
-
-    <Shell.FlyoutHeader>
-        <VerticalStackLayout>
-            <Label x:Name="lblUserName" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
-            <Label x:Name="lblEmail" FontSize="16" TextColor="Black"/>
-        </VerticalStackLayout>
-    </Shell.FlyoutHeader>
 
     <Shell.FlyoutFooter>
         <StackLayout Padding="20">

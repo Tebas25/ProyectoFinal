@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectoFinal.Views.HomePage"
              Title="HomePage">
+
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="{Binding UserName}" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+        <Label Text="{Binding Membership}" FontSize="16" TextColor="White"/>
     </VerticalStackLayout>
+    
 </ContentPage>

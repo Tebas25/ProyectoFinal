@@ -10,8 +10,6 @@ namespace ProyectoFinal
             InitializeComponent();
             this.BindingContext = new AppShellViewModel();
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
-            lblUserName.Text = "Ingresado como: " + App.usuario.Nombre;
-            lblEmail.Text = App.usuario.Correo;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProyectoFinal.Models;
+﻿using Newtonsoft.Json;
+using ProyectoFinal.Models;
 
 namespace ProyectoFinal
 {
@@ -8,7 +9,6 @@ namespace ProyectoFinal
         public App()
         {
             InitializeComponent();
-
             MainPage = new AppShell();
         }
     }
