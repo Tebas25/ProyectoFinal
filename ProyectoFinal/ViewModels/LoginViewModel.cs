@@ -9,6 +9,7 @@ namespace ProyectoFinal.ViewModels
 {
     public partial class LoginViewModel : BaseViewModel
     {
+        BaseUsuarios _base;
         [ObservableProperty]
         public string _Username;
         [ObservableProperty]
@@ -19,6 +20,8 @@ namespace ProyectoFinal.ViewModels
         [RelayCommand]
         public async void Login()
         {
+            string path = Path.Combine(FileSystem.AppDataDirectory, "BaseProyectoFinal.db3");
+            _base = new BaseUsuarios(path);
             if (!string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Clave))
             {
                 Usuario usuario = await _loginRepository.Login(Username, Clave);
@@ -31,6 +34,17 @@ namespace ProyectoFinal.ViewModels
                     string userDetails = JsonConvert.SerializeObject(usuario);
                     Preferences.Set(nameof(App.usuario), userDetails);
                     App.usuario = usuario;
+                    UsuarioDB usuarioDB = new UsuarioDB()
+                    {
+                        Correo = usuario.Correo,
+                        Username = usuario.Username,
+                        Clave = usuario.Clave,
+                        Nombre = usuario.Nombre,
+                        Apellido = usuario.Apellido,
+                        Membresia = usuario.Membresia,
+                        claveAdministrador = usuario.claveAdministrador
+                    };
+                    _base.Guardar(usuarioDB);
                     if (App.usuario.claveAdministrador != null)
                     {
                         await Shell.Current.GoToAsync($"{nameof(HomePageAdministrador)}");
