@@ -31,7 +31,14 @@ namespace ProyectoFinal.ViewModels
                     string userDetails = JsonConvert.SerializeObject(usuario);
                     Preferences.Set(nameof(App.usuario), userDetails);
                     App.usuario = usuario;
-                    await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                    if (App.usuario.claveAdministrador != null)
+                    {
+                        await Shell.Current.GoToAsync($"{nameof(HomePageAdministrador)}");
+                    }
+                    else
+                    {
+                        await Shell.Current.GoToAsync($"//{nameof(HomePage)}");
+                    }
                 }
                 else
                 {

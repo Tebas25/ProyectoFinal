@@ -27,5 +27,30 @@ namespace ProyectoFinal.Services
                 return null;
             }
         }
+
+        public async Task<List<Usuario>> ObtenerUsuario()
+        {
+            var Infousuario = new List<Usuario>();
+            var client = new HttpClient();
+            string url = "https://localhost:7173/api/Usuario/ListarUsuarios";
+            client.BaseAddress = new Uri(url);
+            HttpResponseMessage respuesta = await client.GetAsync(url);
+            if (respuesta.IsSuccessStatusCode)
+            {
+                if (respuesta.StatusCode == HttpStatusCode.NoContent)
+                {
+                    return null;
+                }
+                else
+                {
+                    Infousuario = await respuesta.Content.ReadFromJsonAsync<List<Usuario>>();
+                    return new List<Usuario>(Infousuario);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
     }
 }

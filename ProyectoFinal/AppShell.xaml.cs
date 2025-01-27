@@ -10,6 +10,7 @@ namespace ProyectoFinal
             InitializeComponent();
             this.BindingContext = new AppShellViewModel();
             Routing.RegisterRoute(nameof(HomePage), typeof(HomePage));
+            Routing.RegisterRoute(nameof(HomePageAdministrador), typeof(HomePageAdministrador));
         }
     }
 }

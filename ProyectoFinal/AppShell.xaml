@@ -15,8 +15,7 @@
         FlyoutItemIsVisible="False"
         Shell.FlyoutBehavior="Disabled"
         Route="Login" />
-    
-    
+
     <FlyoutItem Route="HomePage" FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Página Principal"  ContentTemplate="{DataTemplate views:HomePage}"/>
         <ShellContent Title="Sobre Nosotros"  ContentTemplate="{DataTemplate views:AboutPage}"/>

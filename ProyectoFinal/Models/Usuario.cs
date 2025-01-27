@@ -15,6 +15,6 @@ namespace ProyectoFinal.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Membresia { get; set; }
-        public string ClaveAdministrado { get; set; }
+        public string claveAdministrador { get; set; }
     }
 }

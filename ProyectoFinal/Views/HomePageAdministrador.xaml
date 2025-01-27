@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectoFinal.Views.HomePageAdministrador"
+             Title="HomePageAdministrador">
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+            <CollectionView ItemsSource="{Binding Usuarios}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Margin="5" Padding="10" BackgroundColor="LightGray" CornerRadius="10">
+                            <StackLayout>
+                                <Label Text="{Binding Nombre}" FontSize="16" FontAttributes="Bold" />
+                                <Label Text="{Binding Correo}" FontSize="14" />
+                                <Label Text="{Binding Rol}" FontSize="14" FontAttributes="Italic" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button Text="Cargar Usuarios" Command="{Binding CargarUsuariosCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

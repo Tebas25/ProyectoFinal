@@ -9,6 +9,7 @@ namespace ProyectoFinal.Services
 {
     public  interface ILoginRepository
     {
-        Task<Usuario> Login(string username, string password); 
+        Task<Usuario> Login(string username, string password);
+        Task<List<Usuario>> ObtenerUsuario();
     }
 }
